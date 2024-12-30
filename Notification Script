@@ -1,0 +1,13 @@
+<?php
+if (isset($_GET['email'])) {
+    $to = "jeremy@bradenproperty.com";
+    $subject = "Pricing Approval Notification";
+    $message = "The pricing has been approved by " . $_GET['email'];
+    $headers = "From: no-reply@example.com";
+
+    mail($to, $subject, $message, $headers);
+    echo "Notification sent.";
+} else {
+    echo "No email address provided.";
+}
+?>
